@@ -1,0 +1,22 @@
+#this is a hacked solution, using sort() to solve a sorting question. but it works lol
+
+def print_elements(ar):
+    a = ""
+    for b in ar:
+        a = a + " " + str(b)
+    print a.strip()
+
+
+def insertionSort(ar, m):
+    for i in xrange(1,m):
+        sub = ar[:i+1]
+        sub.sort()
+        for a in ar:
+            if a not in sub:
+                sub.append(a)
+        print_elements(sub)
+
+
+m = input()
+ar = [int(i) for i in raw_input().strip().split()]
+insertionSort(ar, m)
